@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[数组中的逆序对]]></title>
-    <url>%2F2019%2F05%2F01%2F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9%2F</url>
+    <url>%2Fundefined.html</url>
     <content type="text"><![CDATA[题目在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组,求出这个数组中的逆序对的总数P。并将P对1000000007取模的结果输出。 即输出P%1000000007 思路归并排序的思路先把数组分隔成子数组， 先统计出子数组内部的逆序对的数目，然后再统计出两个相邻子数组之间的逆序对的数目。在统计逆序对的过程中，还需要对数组进行排序。 代码1234567891011121314151617181920212223242526272829function InversePairs(data) &#123; if (!data || data.length &lt; 2) return 0; const copy = data.slice(); let count = 0; count = mergeCount(data, copy, 0, data.length - 1); return count % 1000000007;&#125;function mergeCount(data, copy, start, end) &#123; if (start === end) return 0; const mid = end - start &gt;&gt; 1, left = mergeCount(copy, data, start, start + mid), // 注意参数，copy作为data传入 right = mergeCount(copy, data, start + mid + 1, end); // 注意参数，copy作为data传入 let [p, q, count, copyIndex] = [start + mid, end, 0, end]; while (p &gt;= start &amp;&amp; q &gt;= start + mid + 1) &#123; if (data[p] &gt; data[q]) &#123; copy[copyIndex--] = data[p--]; count = count + q - start - mid; &#125; else &#123; copy[copyIndex--] = data[q--]; &#125; &#125; while (p &gt;= start) &#123; copy[copyIndex--] = data[p--]; &#125; while (q &gt;= start + mid + 1) &#123; copy[copyIndex--] = data[q--]; &#125; return count + left + right;&#125;]]></content>
       <categories>
         <category>剑指offer</category>
@@ -14,7 +14,7 @@
   </entry>
   <entry>
     <title><![CDATA[第一个只出现一次的字符]]></title>
-    <url>%2F2019%2F05%2F01%2F%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6%2F</url>
+    <url>%2Fundefined.html</url>
     <content type="text"><![CDATA[题目在一个字符串(1&lt;=字符串长度&lt;=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置 思路使用map来记录字符出现的次数即可 代码1234567891011121314151617function FirstNotRepeatingChar(str) &#123; if (str.length &lt; 1 || str.length &gt; 10000) return -1; const map = &#123;&#125;; for (let i = 0; i &lt; str.length; i++) &#123; if (!map[str[i]]) &#123; map[str[i]] = 1;//未出现过则map次数为1 &#125; else &#123; map[str[i]]++;//出现过则次数在加一 &#125; &#125; for (let i = 0; i &lt; str.length; i++) &#123; if (map[str[i]] === 1) &#123; return i;//找到出现次数第一个为一的字符 &#125; &#125; return -1;&#125;]]></content>
       <categories>
         <category>剑指offer</category>
@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title><![CDATA[丑数]]></title>
-    <url>%2F2019%2F05%2F01%2F%E4%B8%91%E6%95%B0%2F</url>
+    <url>%2Fundefined.html</url>
     <content type="text"><![CDATA[题目把只包含质因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，但14不是，因为它包含质因子7。 习惯上我们把1当做是第一个丑数。求按从小到大的顺序的第N个丑数。 思路动态规划 把前面的丑数存着，生成后面的丑数。t2,t3,t5是判断点，用于判断从何处开始选出并乘以对应因子肯定会大于当前数组中最大丑数，而前面的丑数不用考虑。 代码123456789101112function GetUglyNumber_Solution(index) &#123; if (index === 0) return 0; var uglyNum = [1]; var factor2 = 0, factor3 = 0, factor5 = 0; for (var i = 1; i &lt; index; i++) &#123; uglyNum[i] = Math.min(uglyNum[factor2] * 2, uglyNum[factor3] * 3, uglyNum[factor5] * 5); if (uglyNum[i] === uglyNum[factor2] * 2) factor2++; if (uglyNum[i] === uglyNum[factor3] * 3) factor3++; if (uglyNum[i] === uglyNum[factor5] * 5) factor5++; &#125; return uglyNum[index - 1];&#125;]]></content>
       <categories>
         <category>剑指offer</category>
@@ -38,7 +38,7 @@
   </entry>
   <entry>
     <title><![CDATA[曾经的博客地址]]></title>
-    <url>%2F2019%2F05%2F01%2F%E6%9B%BE%E7%BB%8F%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%B0%E5%9D%80%2F</url>
+    <url>%2Fundefined.html</url>
     <content type="text"><![CDATA[博客地址]]></content>
       <categories>
         <category>以前的博客</category>
