@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[丑数]]></title>
+    <url>%2F2019%2F05%2F01%2F%E4%B8%91%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[题目把只包含质因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，但14不是，因为它包含质因子7。 习惯上我们把1当做是第一个丑数。求按从小到大的顺序的第N个丑数。 思路动态规划 把前面的丑数存着，生成后面的丑数。t2,t3,t5是判断点，用于判断从何处开始选出并乘以对应因子肯定会大于当前数组中最大丑数，而前面的丑数不用考虑。 代码123456789101112function GetUglyNumber_Solution(index) &#123; if (index === 0) return 0; var uglyNum = [1]; var factor2 = 0, factor3 = 0, factor5 = 0; for (var i = 1; i &lt; index; i++) &#123; uglyNum[i] = Math.min(uglyNum[factor2] * 2, uglyNum[factor3] * 3, uglyNum[factor5] * 5); if (uglyNum[i] === uglyNum[factor2] * 2) factor2++; if (uglyNum[i] === uglyNum[factor3] * 3) factor3++; if (uglyNum[i] === uglyNum[factor5] * 5) factor5++; &#125; return uglyNum[index - 1];&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[曾经的博客地址]]></title>
+    <url>%2F2019%2F05%2F01%2F%E6%9B%BE%E7%BB%8F%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%9C%B0%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[博客地址]]></content>
+      <categories>
+        <category>以前的博客</category>
+      </categories>
+  </entry>
+</search>
