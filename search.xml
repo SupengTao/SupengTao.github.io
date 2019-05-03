@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数字在排序数组中出现的次数]]></title>
+    <url>%2F2019%2F05%2F03%2F%E6%95%B0%E5%AD%97%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[题目统计一个数字在排序数组中出现的次数。 思路二分查找找到数字开始的位置和数字结束的位置，然后相减 代码12345678910111213141516171819202122232425262728293031323334function GetNumberOfK(data, k) &#123; if (getEnd(data, k) === -1 &amp;&amp; getBegin(data, k) === -1) return 0; return getEnd(data, k) - getBegin(data, k) + 1;&#125;function getBegin(data, k) &#123; let [left, right] = [0, data.length - 1]; let mid = left + right &gt;&gt; 1; while (left &lt;= right) &#123; if (data[mid] &gt; k) &#123; right = mid - 1; &#125; else if (data[mid] &lt; k) &#123; left = mid + 1; &#125; else if (mid - 1 &gt;= 0 &amp;&amp; data[mid - 1] === k) &#123; right = mid - 1; &#125; else return mid; mid = left + right &gt;&gt; 1; &#125; return -1;&#125;function getEnd(data, k) &#123; let [left, right] = [0, data.length - 1]; let mid = left + right &gt;&gt; 1; while (left &lt;= right) &#123; if (data[mid] &gt; k) &#123; right = mid - 1; &#125; else if (data[mid] &lt; k) &#123; left = mid + 1; &#125; else if (mid + 1 &lt; data.length &amp;&amp; data[mid + 1] === k) &#123; left = mid + 1; &#125; else return mid; mid = left + right &gt;&gt; 1; &#125; return -1;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[两链表的公共节点]]></title>
     <url>%2F2019%2F05%2F02%2F%E4%B8%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9%2F</url>
     <content type="text"><![CDATA[题目输入两个链表，找出它们的第一个公共结点。 思路快慢指针 代码1234567891011121314151617181920212223242526272829303132function FindFirstCommonNode(pHead1, pHead2) &#123; const len1 = getLinkLength(pHead1), len2 = getLinkLength(pHead2); let pLong = pHead1, pShort = pHead2, lenGap = len1 - len2; if (len1 &lt; len2) &#123; pLong = pHead2; pShort = pHead1; lenGap = len2 - len1; &#125; while (lenGap--) &#123; pLong = pLong.next; &#125; while (pLong !== null) &#123; // pLong,pShort一起跑 if (pLong.val === pShort.val) &#123; return pLong; &#125; pLong = pLong.next; pShort = pShort.next; &#125; return null;&#125;function getLinkLength(pHead) &#123; let length = 0; while (pHead !== null) &#123; pHead = pHead.next; length++; &#125; return length;&#125;]]></content>
