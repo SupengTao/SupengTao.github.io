@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[平衡二叉树]]></title>
+    <url>%2F2019%2F05%2F04%2F%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[题目输入一棵二叉树，判断该二叉树是否是平衡二叉树。 思路递归判断左右子树相差为多少 代码123456789101112function IsBalanced_Solution(pRoot) &#123; if (pRoot == null) return true; let leftLen = TreeDepth(pRoot.left); let rightLen = TreeDepth(pRoot.right); return Math.abs(rightLen - leftLen) &lt;= 1 &amp;&amp; IsBalanced_Solution(pRoot.left) &amp;&amp; IsBalanced_Solution(pRoot.right);&#125;function TreeDepth(pRoot) &#123; if (pRoot == null) return 0; let leftLen = TreeDepth(pRoot.left); let rightLen = TreeDepth(pRoot.right); return Math.max(leftLen, rightLen) + 1;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[深入理解call、apply]]></title>
     <url>%2F2019%2F05%2F03%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3call%E3%80%81apply%2F</url>
     <content type="text"><![CDATA[call的概念1call() 方法在使用一个指定的 this 值和若干个指定的参数值的前提下调用某个函数或方法。 例如123456789var foo = &#123; value: 1&#125;;function bar() &#123; console.log(this.value);&#125;bar.call(foo); // 1 注意两点： 1.call 改变了 this 的指向，指向到 foo 2.bar 函数执行了 模拟第一版 12345678var foo = &#123; value: 1, bar: function() &#123; console.log(this.value) &#125;&#125;;foo.bar(); // 1 然而添加了新的属性，所以还需删除新方法实现结果如下123456789101112131415161718// 第一版Function.prototype.call2 = function(context) &#123; // 首先要获取调用call的函数，用this可以获取 context.fn = this; context.fn(); delete context.fn;&#125;// 测试一下var foo = &#123; value: 1&#125;;function bar() &#123; console.log(this.value);&#125;bar.call2(foo); // 1 模拟最终版本1.函数具有返回值2.this 参数可以传 null，当为 null 的时候，视为指向 window 实现方法如下所示： 12345678910111213141516171819202122232425262728293031323334353637383940Function.prototype.call2 = function (context) &#123; var context = context || window; context.fn = this; var args = []; for(var i = 1, len = arguments.length; i &lt; len; i++) &#123; args.push('arguments[' + i + ']'); &#125; var result = eval('context.fn(' + args +')'); delete context.fn return result;&#125;// 测试一下var value = 2;var obj = &#123; value: 1&#125;function bar(name, age) &#123; console.log(this.value); return &#123; value: this.value, name: name, age: age &#125;&#125;bar.call2(null); // 2console.log(bar.call2(obj, 'kevin', 18));// 1// Object &#123;// value: 1,// name: 'kevin',// age: 18// &#125; 同理实现apply12345678910111213141516171819Function.prototype.apply = function (context, arr) &#123; var context = Object(context) || window; context.fn = this; var result; if (!arr) &#123; result = context.fn(); &#125; else &#123; var args = []; for (var i = 0, len = arr.length; i &lt; len; i++) &#123; args.push('arr[' + i + ']'); &#125; result = eval('context.fn(' + args + ')') &#125; delete context.fn return result;&#125; 参考链接]]></content>
