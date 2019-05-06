@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数组中只出现一次的数]]></title>
+    <url>%2F2019%2F05%2F06%2F%E6%95%B0%E7%BB%84%E4%B8%AD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[题目一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。 思路使用map记录下每个数的次数，占空间。 代码123456789101112131415161718function FindNumsAppearOnce(array) &#123; const map = &#123;&#125;, res = []; for (let i = 0; i &lt; array.length; i++) &#123; if (!map[array[i]]) &#123; map[array[i]] = 1; &#125; else &#123; map[array[i]]++; &#125; &#125; for (let i = 0; i &lt; array.length; i++) &#123; if (map[array[i]] === 1) &#123; res.push(array[i]); &#125; &#125; return res;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[平衡二叉树]]></title>
     <url>%2F2019%2F05%2F04%2F%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
     <content type="text"><![CDATA[题目输入一棵二叉树，判断该二叉树是否是平衡二叉树。 思路递归判断左右子树相差为多少 代码123456789101112function IsBalanced_Solution(pRoot) &#123; if (pRoot == null) return true; let leftLen = TreeDepth(pRoot.left); let rightLen = TreeDepth(pRoot.right); return Math.abs(rightLen - leftLen) &lt;= 1 &amp;&amp; IsBalanced_Solution(pRoot.left) &amp;&amp; IsBalanced_Solution(pRoot.right);&#125;function TreeDepth(pRoot) &#123; if (pRoot == null) return 0; let leftLen = TreeDepth(pRoot.left); let rightLen = TreeDepth(pRoot.right); return Math.max(leftLen, rightLen) + 1;&#125;]]></content>
