@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[字符串左旋]]></title>
+    <url>%2F2019%2F05%2F08%2F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B7%A6%E6%97%8B%2F</url>
+    <content type="text"><![CDATA[题目汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！ 思路js的话直接调用splice函数就行了 代码12345function LeftRotateString(str, n) &#123; if (str === null || str.length === 0) return ''; n = n % str.length; return str.slice(n) + str.slice(0, n);&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[和为s的字符串]]></title>
     <url>%2F2019%2F05%2F07%2F%E9%80%92%E5%A2%9E%E6%95%B0%E7%BB%84%E5%92%8C%E4%B8%BAs%2F</url>
     <content type="text"><![CDATA[题目输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。 思路数学题，和相同的乘积最小，画函数，两个数的相距距离最远即可 代码1234567891011121314151617function FindNumbersWithSum(array, sum) &#123; if (array.length &lt; 2) return []; let left = 0, right = array.length - 1; const res = []; while (left &lt; right) &#123; if (array[left] + array[right] &lt; sum) &#123; left++; &#125; else if (array[left] + array[right] &gt; sum) &#123; right--; &#125; else &#123; res.push(array[left], array[right]); break; &#125; &#125; return res;&#125;]]></content>
