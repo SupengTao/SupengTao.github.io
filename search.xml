@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[计算题]]></title>
+    <url>%2F2019%2F05%2F11%2F%E8%AE%A1%E7%AE%97%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[题目求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。 思路位运算+递归 代码123function SumSolution(n) &#123; return n &amp;&amp; Sum_Solution(n - 1) + n;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[孩子们的游戏]]></title>
+    <url>%2F2019%2F05%2F11%2F%E5%AD%A9%E5%AD%90%E4%BB%AC%E7%9A%84%E6%B8%B8%E6%88%8F%2F</url>
+    <content type="text"><![CDATA[题目每年六一儿童节,牛客都会准备一些小礼物去看望孤儿院的小朋友,今年亦是如此。HF作为牛客的资深元老,自然也准备了一些小游戏。其中,有个游戏是这样的:首先,让小朋友们围成一个大圈。然后,他随机指定一个数m,让编号为0的小朋友开始报数。每次喊到m-1的那个小朋友要出列唱首歌,然后可以在礼品箱中任意的挑选礼物,并且不再回到圈中,从他的下一个小朋友开始,继续0…m-1报数….这样下去….直到剩下最后一个小朋友,可以不用表演,并且拿到牛客名贵的“名侦探柯南”典藏版(名额有限哦!!^_^)。请你试着想下,哪个小朋友会得到这份礼品呢？(注：小朋友的编号是从0到n-1) 思路约瑟夫环问题 代码1234567891011121314function LastRemainingSolution(n, m) &#123; if (n === 0 || m === 0) return -1; const child = []; let del = 0; for (let i = 0; i &lt; n; i++) &#123; child[i] = i; &#125; while (child.length &gt; 1) &#123; const k = m - 1; del = (del + k) % child.length; child.splice(del, 1); &#125; return child[0];&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[扑克牌游戏]]></title>
     <url>%2F2019%2F05%2F11%2F%E6%89%91%E5%85%8B%E7%89%8C%E6%B8%B8%E6%88%8F%2F</url>
     <content type="text"><![CDATA[题目LL今天心情特别好,因为他去买了一副扑克牌,发现里面居然有2个大王,2个小王(一副牌原本是54张^_^)…他随机从中抽出了5张牌,想测测自己的手气,看看能不能抽到顺子,如果抽到的话,他决定去买体育彩票,嘿嘿！！“红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何。为了方便起见,你可以认为大小王是0。 思路要求是顺子，则要求5个数最大最小数的差不超过5，且不能有重复的数字 代码12345678910111213141516function IsContinuous(numbers) &#123; let max = 0, min = 14, flag = 0; if (numbers.length !== 5) return false; for (let i = 0; i &lt; numbers.length; i++) &#123; if (numbers[i] &gt; 13 || numbers[i] &lt; 0) return false; if (numbers[i] === 0) continue; if ((flag &gt;&gt; numbers[i] &amp; 1) === 1) return false; flag = flag | 1 &lt;&lt; numbers[i]; if (numbers[i] &gt; max) max = numbers[i]; if (numbers[i] &lt; min) min = numbers[i]; &#125; if (max - min &gt;= 5) return false; return true;&#125;]]></content>
