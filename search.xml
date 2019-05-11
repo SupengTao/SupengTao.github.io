@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[两数之和]]></title>
+    <url>%2F2019%2F05%2F11%2F%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[题目写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 思路二进制、位运算 代码12345678function Add(num1, num2) &#123; while (num2 !== 0) &#123; const tmp1 = num1 ^ num2; num2 = (num1 &amp; num2) &lt;&lt; 1; num1 = tmp1; &#125; return num1;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[计算题]]></title>
     <url>%2F2019%2F05%2F11%2F%E8%AE%A1%E7%AE%97%E9%A2%98%2F</url>
     <content type="text"><![CDATA[题目求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。 思路位运算+递归 代码123function SumSolution(n) &#123; return n &amp;&amp; Sum_Solution(n - 1) + n;&#125;]]></content>
