@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[把字符串转化为整数]]></title>
+    <url>%2F2019%2F05%2F11%2F%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E6%95%B4%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[题目将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。 思路不能使用parseInt函数，要求自己实现，可以使用位运算 代码1234567891011121314function StrToInt(str) &#123; let res = 0, flag = 1; const n = str.length; if (!n) return 0; if (str[0] === '-') &#123; flag = -1; &#125; for (let i = str[0] === '+' || str[0] === '-' ? 1 : 0; i &lt; n; i++) &#123; if (!(str[i] &gt;= '0' &amp;&amp; str[i] &lt;= '9')) return 0; res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + (str[i] - '0'); &#125; return res * flag;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[重复的数]]></title>
     <url>%2F2019%2F05%2F11%2F%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%2F</url>
     <content type="text"><![CDATA[题目在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。 思路利用map ，键值对应求解 代码1234567891011121314function duplicate(numbers, duplication) &#123; const map = &#123;&#125;; let flag = false; for (let i = 0; i &lt; numbers.length; i++) &#123; if (!map[numbers[i]]) &#123; map[numbers[i]] = 1; &#125; else &#123; duplication[0] = numbers[i]; flag = true; break; &#125; &#125; return flag;&#125;]]></content>
