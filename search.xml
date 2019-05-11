@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[重复的数]]></title>
+    <url>%2F2019%2F05%2F11%2F%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[题目在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。 思路利用map ，键值对应求解 代码1234567891011121314function duplicate(numbers, duplication) &#123; const map = &#123;&#125;; let flag = false; for (let i = 0; i &lt; numbers.length; i++) &#123; if (!map[numbers[i]]) &#123; map[numbers[i]] = 1; &#125; else &#123; duplication[0] = numbers[i]; flag = true; break; &#125; &#125; return flag;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[两数之和]]></title>
     <url>%2F2019%2F05%2F11%2F%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%2F</url>
     <content type="text"><![CDATA[题目写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。 思路二进制、位运算 代码12345678function Add(num1, num2) &#123; while (num2 !== 0) &#123; const tmp1 = num1 ^ num2; num2 = (num1 &amp; num2) &lt;&lt; 1; num1 = tmp1; &#125; return num1;&#125;]]></content>
