@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[构建乘积数组]]></title>
+    <url>%2F2019%2F05%2F12%2F%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[题目给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…A[i-1]A[i+1]…A[n-1]。不能使用除法。 思路借助中间变量存储后面的乘积 代码12345678910111213141516function multiply(array) &#123; const B = [], len = array.length; B[0] = 1; // 计算前i - 1个元素的乘积 for (let i = 1; i &lt; len; i++) &#123; B[i] = array[i - 1] * B[i - 1]; &#125; let tmp = 1; // 计算后N - i个元素的乘积并连接 for (let i = len - 2; i &gt;= 0; i--) &#123; tmp *= array[i + 1]; B[i] *= tmp; &#125; return B;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[把字符串转化为整数]]></title>
     <url>%2F2019%2F05%2F11%2F%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E6%95%B4%E6%95%B0%2F</url>
     <content type="text"><![CDATA[题目将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。 思路不能使用parseInt函数，要求自己实现，可以使用位运算 代码1234567891011121314function StrToInt(str) &#123; let res = 0, flag = 1; const n = str.length; if (!n) return 0; if (str[0] === '-') &#123; flag = -1; &#125; for (let i = str[0] === '+' || str[0] === '-' ? 1 : 0; i &lt; n; i++) &#123; if (!(str[i] &gt;= '0' &amp;&amp; str[i] &lt;= '9')) return 0; res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + (str[i] - '0'); &#125; return res * flag;&#125;]]></content>
