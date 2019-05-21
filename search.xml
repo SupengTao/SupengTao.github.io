@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[链表中环的入口节点]]></title>
+    <url>%2F2019%2F05%2F21%2F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[题目给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。 思路快慢指针 代码123456789101112131415161718function EntryNodeOfLoop(pHead) &#123; let fast = pHead; let slow = pHead; while (fast !== null &amp;&amp; fast.next !== null) &#123; slow = slow.next; fast = fast.next.next; if (fast === slow) &#123; // 两者相遇 let p = pHead; while (p !== slow) &#123; p = p.next; slow = slow.next; &#125; return p; &#125; &#125; return null;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[字符流中第一个不重复的字符]]></title>
     <url>%2F2019%2F05%2F20%2F%E5%AD%97%E7%AC%A6%E6%B5%81%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%97%E7%AC%A6%2F</url>
     <content type="text"><![CDATA[题目请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。 思路用map来解决 代码12345678910111213141516171819let map = &#123;&#125;;function Init() &#123; map = &#123;&#125;;&#125;function Insert(ch) &#123; if (map[ch]) &#123; map[ch] += 1; &#125; else &#123; map[ch] = 1; &#125;&#125;function FirstAppearingOnce() &#123; for (const i in map) &#123; if (map[i] === 1) &#123; return i; &#125; &#125; return '#';&#125;]]></content>
