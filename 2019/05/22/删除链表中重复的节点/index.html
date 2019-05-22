@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…A[i-1]A[i+1]…A[n-1]。不能使用除法。 思路借助中间变量存储后面的乘积 代码12345678910111213141516function multiply(array) &amp;#123;  const B = [],    len = array.length;">
+<meta name="description" content="题目在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5 处理后为 1-&amp;gt;2-&amp;gt;5 思路注意两点：1.第一第二个节点重复需要额外创建新的头结点2.多个重复节点需要循环处理 代码12345678910111213141516171819202122232425">
 <meta name="keywords" content="算法,剑指offer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="构建乘积数组">
-<meta property="og:url" content="http://yoursite.com/2019/05/12/构建乘积数组/index.html">
+<meta property="og:title" content="删除链表中重复的节点">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/删除链表中重复的节点/index.html">
 <meta property="og:site_name" content="北极洲">
-<meta property="og:description" content="题目给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…A[i-1]A[i+1]…A[n-1]。不能使用除法。 思路借助中间变量存储后面的乘积 代码12345678910111213141516function multiply(array) &amp;#123;  const B = [],    len = array.length;">
+<meta property="og:description" content="题目在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5 处理后为 1-&amp;gt;2-&amp;gt;5 思路注意两点：1.第一第二个节点重复需要额外创建新的头结点2.多个重复节点需要循环处理 代码12345678910111213141516171819202122232425">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-12T11:43:03.115Z">
+<meta property="og:updated_time" content="2019-05-22T07:46:45.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="构建乘积数组">
-<meta name="twitter:description" content="题目给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]A[1]…A[i-1]A[i+1]…A[n-1]。不能使用除法。 思路借助中间变量存储后面的乘积 代码12345678910111213141516function multiply(array) &amp;#123;  const B = [],    len = array.length;">
+<meta name="twitter:title" content="删除链表中重复的节点">
+<meta name="twitter:description" content="题目在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5 处理后为 1-&amp;gt;2-&amp;gt;5 思路注意两点：1.第一第二个节点重复需要额外创建新的头结点2.多个重复节点需要循环处理 代码12345678910111213141516171819202122232425">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/12/构建乘积数组/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/22/删除链表中重复的节点/">
 
 
 
 
 
-  <title>构建乘积数组 | 北极洲</title>
+  <title>删除链表中重复的节点 | 北极洲</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/构建乘积数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/删除链表中重复的节点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黑洲人">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">构建乘积数组</h1>
+          <h1 class="post-title" itemprop="name headline">删除链表中重复的节点</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-12T19:39:52+08:00">
-                2019-05-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T15:41:34+08:00">
+                2019-05-22
               </time>
             
 
@@ -374,9 +374,9 @@
       
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]</em>A[i+1]<em>…</em>A[n-1]。不能使用除法。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>借助中间变量存储后面的乘积</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> B = [],</span><br><span class="line">    len = array.length;</span><br><span class="line">  B[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// 计算前i - 1个元素的乘积</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">    B[i] = array[i - <span class="number">1</span>] * B[i - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> tmp = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// 计算后N - i个元素的乘积并连接</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    tmp *= array[i + <span class="number">1</span>];</span><br><span class="line">    B[i] *= tmp;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>注意两点：<br>1.第一第二个节点重复需要额外创建新的头结点<br>2.多个重复节点需要循环处理</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteDuplication</span>(<span class="params">pHead</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!pHead)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> tempHead = <span class="keyword">new</span> ListNode(<span class="number">-1</span>);</span><br><span class="line">    tempHead.next = pHead;</span><br><span class="line">    <span class="keyword">var</span> preNode = tempHead;</span><br><span class="line">    <span class="keyword">var</span> curr1 = preNode.next;</span><br><span class="line">    <span class="keyword">var</span> curr2 = curr1.next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(curr1)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!curr2 || curr2.val !== curr1.val)&#123;</span><br><span class="line">            <span class="keyword">if</span>(curr1.next !== curr2)&#123;</span><br><span class="line">                clear(curr1, curr2);</span><br><span class="line">                preNode.next = curr2;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              preNode = curr1;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            curr1 = curr2;</span><br><span class="line">            <span class="keyword">if</span>(curr2)&#123;</span><br><span class="line">              curr2 = curr2.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">if</span>(curr2)&#123;</span><br><span class="line">            curr2 = curr2.next;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tempHead.next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">clear</span>(<span class="params">node, stop</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp;</span><br><span class="line">        <span class="keyword">while</span>(node !== stop)&#123;</span><br><span class="line">            temp = node.next;</span><br><span class="line">            node.next = <span class="literal">null</span>;</span><br><span class="line">            node = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -408,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/11/把字符串转化为整数/" rel="next" title="把字符串转化为整数">
-                <i class="fa fa-chevron-left"></i> 把字符串转化为整数
+              <a href="/2019/05/21/链表中环的入口节点/" rel="next" title="链表中环的入口节点">
+                <i class="fa fa-chevron-left"></i> 链表中环的入口节点
               </a>
             
           </div>
@@ -417,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/13/正则表达式/" rel="prev" title="正则表达式">
-                正则表达式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

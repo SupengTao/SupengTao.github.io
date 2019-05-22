@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[删除链表中重复的节点]]></title>
+    <url>%2F2019%2F05%2F22%2F%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[题目在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5 思路注意两点：1.第一第二个节点重复需要额外创建新的头结点2.多个重复节点需要循环处理 代码12345678910111213141516171819202122232425262728293031323334353637383940function deleteDuplication(pHead)&#123; if(!pHead)&#123; return null; &#125; var tempHead = new ListNode(-1); tempHead.next = pHead; var preNode = tempHead; var curr1 = preNode.next; var curr2 = curr1.next; while(curr1)&#123; if(!curr2 || curr2.val !== curr1.val)&#123; if(curr1.next !== curr2)&#123; clear(curr1, curr2); preNode.next = curr2; &#125; else &#123; preNode = curr1; &#125; curr1 = curr2; if(curr2)&#123; curr2 = curr2.next; &#125; &#125; else &#123; if(curr2)&#123; curr2 = curr2.next; &#125; &#125; &#125; return tempHead.next; function clear(node, stop)&#123; var temp; while(node !== stop)&#123; temp = node.next; node.next = null; node = temp; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[链表中环的入口节点]]></title>
     <url>%2F2019%2F05%2F21%2F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E8%8A%82%E7%82%B9%2F</url>
     <content type="text"><![CDATA[题目给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。 思路快慢指针 代码123456789101112131415161718function EntryNodeOfLoop(pHead) &#123; let fast = pHead; let slow = pHead; while (fast !== null &amp;&amp; fast.next !== null) &#123; slow = slow.next; fast = fast.next.next; if (fast === slow) &#123; // 两者相遇 let p = pHead; while (p !== slow) &#123; p = p.next; slow = slow.next; &#125; return p; &#125; &#125; return null;&#125;]]></content>
