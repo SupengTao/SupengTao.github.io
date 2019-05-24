@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[对称的二叉树]]></title>
+    <url>%2F2019%2F05%2F24%2F%E5%AF%B9%E7%A7%B0%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[题目实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。 思路与树相关的常用递归的思路来解决 代码123456789101112131415161718function isSymmetrical(pRoot) &#123; if (pRoot === null) &#123; return true; &#125; return compareRoot(pRoot.left, pRoot.right);&#125;function compareRoot(left, right) &#123; if (left === null) &#123; return right === null; &#125; if (right === null) &#123; return false; &#125; if (left.val !== right.val) &#123; return false; &#125; return compareRoot(left.left, right.right) &amp;&amp; compareRoot(left.right, right.left);&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二叉树的下一个节点]]></title>
     <url>%2F2019%2F05%2F22%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9%2F</url>
     <content type="text"><![CDATA[题目给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。 思路绘图分析，状态考虑全面即可 代码123456789101112131415161718192021function GetNext(pNode) &#123; if (pNode === null) &#123; return null; &#125; if (pNode.right !== null) &#123; // 第1种 pNode = pNode.right; while (pNode.left !== null) &#123; pNode = pNode.left; &#125; return pNode; &#125; while (pNode.next !== null) &#123; // 第2种 if (pNode === pNode.next.left) &#123; return pNode.next; &#125; pNode = pNode.next; &#125; return null;&#125;]]></content>
