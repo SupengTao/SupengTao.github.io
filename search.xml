@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[序列化二叉树]]></title>
+    <url>%2F2019%2F05%2F26%2F%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[题目请实现两个函数，分别用来序列化和反序列化二叉树 思路序列化二叉树即将二叉树转化为字符串形式（前中后序），需要注意将空节点标识出来，反序列化需要注意标识是否为空节点 代码12345678910111213141516171819202122232425const arr = [];function Serialize(pRoot) &#123; // write code here if (pRoot === null) &#123; arr.push('a'); &#125; else &#123; arr.push(pRoot.val); Serialize(pRoot.left); Serialize(pRoot.right); &#125;&#125;function Deserialize() &#123; // write code here let node = null; if (arr.length &lt; 1) &#123; return null; &#125; const number = arr.shift(); if (typeof number === 'number') &#123; node = new TreeNode(number); node.left = Deserialize(); node.right = Deserialize(); &#125; return node;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[按层打印二叉树]]></title>
     <url>%2F2019%2F05%2F26%2F%E6%8C%89%E5%B1%82%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
     <content type="text"><![CDATA[题目从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。 思路记录上一层的子节点个数，才能按个数分行，引入一个辅助队列 代码12345678910111213141516171819202122232425262728293031function Print(pRoot) &#123; const queue = [], res = []; if (pRoot === null) &#123; return res; &#125; queue.push(pRoot); let nextLevel = 0; // 下一层节点个数 let toBePrinted = 1; // 这一层还有多少个节点要打印 let list = []; // 存放每一层节点 while (queue.length) &#123; const pNode = queue.shift(); list.push(pNode.val); if (pNode.left !== null) &#123; queue.push(pNode.left); nextLevel++; &#125; if (pNode.right !== null) &#123; queue.push(pNode.right); nextLevel++; &#125; toBePrinted--; if (toBePrinted === 0) &#123; res.push(list); list = []; toBePrinted = nextLevel; nextLevel = 0; &#125; &#125; return res;&#125;]]></content>
