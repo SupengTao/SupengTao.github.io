@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 思路正则表达式 代码123function isNumeric(s) &amp;#123;  return s.match(/[+-]?\d*(\.\d*">
+<meta name="description" content="题目如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。 思路思路没什么好说的，主要拓展在不同情况下的不同数据结构，进行操作时的不同复杂度，寻找最优解 代码1234567">
 <meta name="keywords" content="算法,剑指offer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="表示数值的字符串">
-<meta property="og:url" content="http://yoursite.com/2019/05/19/表示数值的字符串/index.html">
+<meta property="og:title" content="数据流中的中位数">
+<meta property="og:url" content="http://yoursite.com/2019/05/27/数据流中的中位数/index.html">
 <meta property="og:site_name" content="北极洲">
-<meta property="og:description" content="题目请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 思路正则表达式 代码123function isNumeric(s) &amp;#123;  return s.match(/[+-]?\d*(\.\d*">
+<meta property="og:description" content="题目如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。 思路思路没什么好说的，主要拓展在不同情况下的不同数据结构，进行操作时的不同复杂度，寻找最优解 代码1234567">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-19T14:27:58.423Z">
+<meta property="og:updated_time" content="2019-05-27T13:27:54.416Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="表示数值的字符串">
-<meta name="twitter:description" content="题目请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 思路正则表达式 代码123function isNumeric(s) &amp;#123;  return s.match(/[+-]?\d*(\.\d*">
+<meta name="twitter:title" content="数据流中的中位数">
+<meta name="twitter:description" content="题目如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。 思路思路没什么好说的，主要拓展在不同情况下的不同数据结构，进行操作时的不同复杂度，寻找最优解 代码1234567">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/19/表示数值的字符串/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/27/数据流中的中位数/">
 
 
 
 
 
-  <title>表示数值的字符串 | 北极洲</title>
+  <title>数据流中的中位数 | 北极洲</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/19/表示数值的字符串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/27/数据流中的中位数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黑洲人">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">表示数值的字符串</h1>
+          <h1 class="post-title" itemprop="name headline">数据流中的中位数</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-19T22:26:10+08:00">
-                2019-05-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-27T21:24:37+08:00">
+                2019-05-27
               </time>
             
 
@@ -374,9 +374,9 @@
       
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但<br>是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>正则表达式</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumeric</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> s.match(<span class="regexp">/[+-]?\d*(\.\d*)?([eE][+-]?\d+)?/g</span>)[<span class="number">0</span>] === s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数<br>个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的<br>中位数。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>思路没什么好说的，主要拓展在不同情况下的不同数据结构，进行操作时的不同复杂度，寻找最优解</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  array.push(num);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = array.length - <span class="number">2</span>; array[i] &gt; num; i--) &#123;</span><br><span class="line">    [array[i], array[i + <span class="number">1</span>]] = [array[i + <span class="number">1</span>], array[i]];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetMedian</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (array.length &amp; <span class="number">1</span> === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> array[(array.length - <span class="number">1</span>) / <span class="number">2</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (array[array.length / <span class="number">2</span>] + array[array.length / <span class="number">2</span> - <span class="number">1</span>]) / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -408,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/14/函数的防抖和节流/" rel="next" title="函数的防抖和节流">
-                <i class="fa fa-chevron-left"></i> 函数的防抖和节流
+              <a href="/2019/05/27/二叉搜索树的第k个节点/" rel="next" title="二叉搜索树的第k个节点">
+                <i class="fa fa-chevron-left"></i> 二叉搜索树的第k个节点
               </a>
             
           </div>
@@ -417,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/20/字符流中第一个不重复的字符/" rel="prev" title="字符流中第一个不重复的字符">
-                字符流中第一个不重复的字符 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
