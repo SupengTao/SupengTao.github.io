@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[矩阵中的路径]]></title>
+    <url>%2F2019%2F05%2F29%2F%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%2F</url>
+    <content type="text"><![CDATA[题目请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e矩阵中包含一条字符串”bcced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。 思路采用回溯法，当发现一个节点不符合时，回退上一个节点寻找匹配的节点 代码123456789101112131415161718192021222324252627282930313233343536373839function hasPath(matrix, rows, cols, path) &#123; const pathLength = 0; const visited = new Array(rows * cols); for (let row = 0; row &lt; rows; row++) &#123; for (let col = 0; col &lt; cols; col++) &#123; // 遍历，遍历的点为起点。 if (hasPathCore(matrix, rows, cols, row, col, path, pathLength, visited)) &#123; return true; &#125; &#125; &#125; return false;&#125;function hasPathCore(matrix, rows, cols, row, col, path, pathLength, visited) &#123; let hasPath = false; if (pathLength === path.length) return true; if ( row &gt;= 0 &amp;&amp; row &lt; rows &amp;&amp; col &gt;= 0 &amp;&amp; col &lt; cols &amp;&amp; matrix[row * cols + col] === path[pathLength] &amp;&amp; !visited[row * cols + col] ) &#123; ++pathLength; visited[row * cols + col] = true; // 因为||为短路运算符，只要第一个满足就会返回，而不会去计算后面的，所以有些路径可以不用去走。 hasPath = hasPathCore(matrix, rows, cols, row - 1, col, path, pathLength, visited) || hasPathCore(matrix, rows, cols, row, col - 1, path, pathLength, visited) || hasPathCore(matrix, rows, cols, row + 1, col, path, pathLength, visited) || hasPathCore(matrix, rows, cols, row, col + 1, path, pathLength, visited); if (!hasPath) &#123; --pathLength; visited[row * cols + col] = false; &#125; &#125; return hasPath;&#125;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[滑动窗口的最大值]]></title>
     <url>%2F2019%2F05%2F28%2F%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%2F</url>
     <content type="text"><![CDATA[题目给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值。例如，如果输入数组{2,3,4,2,6,2,5,1}及滑动窗口的大小3，那么一共存在6个滑动窗口，他们的最大值分别为{4,4,6,6,6,5}； 针对数组{2,3,4,2,6,2,5,1}的滑动窗口有以下6个： {[2,3,4],2,6,2,5,1}， {2,[3,4,2],6,2,5,1}，{2,3,[4,2,6],2,5,1}， {2,3,4,[2,6,2],5,1}， {2,3,4,2,[6,2,5],1}， {2,3,4,2,6,[2,5,1]}。 思路用队列来模拟窗口同时，利用两个栈来模拟队列可以降低复杂度 代码12345678910111213141516171819202122232425function maxInWindows(num, size)&#123; let res = []; if(size == 0)&#123; return res; &#125; let begin; let queue = []; for(let i = 0; i &lt; num.length; i++)&#123; begin = i - size + 1;//代表滑动窗口的左边界 if(queue.length == 0)&#123; queue.push(i); &#125;else if(begin &gt; queue[0])&#123; queue.shift(); &#125; while((queue.length != 0) &amp;&amp; (num[queue[queue.length - 1]] &lt;= num[i]))&#123; queue.pop(); &#125; queue.push(i); if(begin &gt;= 0)&#123; res.push(num[queue[0]]) &#125; &#125; return res;&#125;]]></content>
