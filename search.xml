@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数组同构分组]]></title>
+    <url>%2F2019%2F05%2F31%2F%E6%95%B0%E7%BB%84%E5%90%8C%E6%9E%84%E5%88%86%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[题目Given an array of strings, group anagrams together. For example, given: [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”], ouput：[ [“ate”, “eat”,”tea”], [“nat”,”tan”], [“bat”]] 思路运用hashmap来解决 代码12345678910111213141516171819202122232425class Solution &#123;public: vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123; int n=strs.size(); if(n==0) return vector&lt;vector&lt;string&gt;&gt; (); vector&lt;vector&lt;string&gt;&gt; res; unordered_map&lt;string, vector&lt;string&gt;&gt; hash; //(1)将字符串数组先按字典顺序排序 sort(strs.begin(), strs.end()); //(2)构造hash表 for(int i=0;i&lt;n;i++) &#123;//将排序后相等的字符串放在相同的vector string tmp=strs[i]; sort(tmp.begin(), tmp.end()); hash[tmp].push_back(strs[i]); &#125; unordered_map&lt;string, vector&lt;string&gt;&gt;::iterator it; for(it=hash.begin();it != hash.end();it++) &#123;//(3)将hash表中的value值(数组形式)放到结果数组 res.push_back(it-&gt;second); &#125; return res; &#125;&#125;;]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[矩阵中的路径]]></title>
     <url>%2F2019%2F05%2F29%2F%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%2F</url>
     <content type="text"><![CDATA[题目请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e矩阵中包含一条字符串”bcced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。 思路采用回溯法，当发现一个节点不符合时，回退上一个节点寻找匹配的节点 代码123456789101112131415161718192021222324252627282930313233343536373839function hasPath(matrix, rows, cols, path) &#123; const pathLength = 0; const visited = new Array(rows * cols); for (let row = 0; row &lt; rows; row++) &#123; for (let col = 0; col &lt; cols; col++) &#123; // 遍历，遍历的点为起点。 if (hasPathCore(matrix, rows, cols, row, col, path, pathLength, visited)) &#123; return true; &#125; &#125; &#125; return false;&#125;function hasPathCore(matrix, rows, cols, row, col, path, pathLength, visited) &#123; let hasPath = false; if (pathLength === path.length) return true; if ( row &gt;= 0 &amp;&amp; row &lt; rows &amp;&amp; col &gt;= 0 &amp;&amp; col &lt; cols &amp;&amp; matrix[row * cols + col] === path[pathLength] &amp;&amp; !visited[row * cols + col] ) &#123; ++pathLength; visited[row * cols + col] = true; // 因为||为短路运算符，只要第一个满足就会返回，而不会去计算后面的，所以有些路径可以不用去走。 hasPath = hasPathCore(matrix, rows, cols, row - 1, col, path, pathLength, visited) || hasPathCore(matrix, rows, cols, row, col - 1, path, pathLength, visited) || hasPathCore(matrix, rows, cols, row + 1, col, path, pathLength, visited) || hasPathCore(matrix, rows, cols, row, col + 1, path, pathLength, visited); if (!hasPath) &#123; --pathLength; visited[row * cols + col] = false; &#125; &#125; return hasPath;&#125;]]></content>
