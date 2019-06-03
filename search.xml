@@ -183,6 +183,13 @@
     <title><![CDATA[函数柯里化]]></title>
     <url>%2F2019%2F05%2F13%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>JavaScript基础</category>
+        <category>函数柯里化</category>
+      </categories>
+      <tags>
+        <tag>JavaScript基础</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[正则表达式]]></title>
