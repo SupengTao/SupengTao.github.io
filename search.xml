@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二叉树的非递归遍历]]></title>
+    <url>%2F2019%2F06%2F04%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[思路非递归遍历需要用到辅助的栈来存储需要遍历的节点。 前序遍历123456789101112131415161718function first(root) &#123; var arr=[],res=[]; if(root!=null)&#123; arr.push(root); &#125; while(arr.length!=0)&#123; var temp=arr.pop(); res.push(temp.val); //这里先放右边再放左边是因为取出来的顺序相反 if(temp.right!=null)&#123; arr.push(temp.right); &#125; if(temp.left!=null)&#123; arr.push(temp.left); &#125; &#125; return res;&#125; 中序遍历12345678910111213141516171819function LDR(root)&#123;var arr=[],res=[];while(true)&#123; while(root!=null)&#123; arr.push(root); root=root.left; &#125; //终止条件：最后树遍历完了自然就结束 if(arr.length==0)&#123; break; &#125; var temp=arr.pop(); res.push(temp.val); root=temp.right;&#125;return res;&#125;LDR(root)//4,2,5,1,6,3,7 后续遍历1234567891011121314151617function LRD(root)&#123;var arr=[],res=[];arr.push(root);while(arr.length!=0)&#123; var p=arr.pop(); res.push(p.val); if(p.left!=null)&#123; arr.push(p.left); &#125; if(p.right!=null)&#123; arr.push(p.right); &#125;&#125;return res.reverse();&#125;LRD(root)//4,5,2,6,7,3,1]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数组同构分组]]></title>
     <url>%2F2019%2F05%2F31%2F%E6%95%B0%E7%BB%84%E5%90%8C%E6%9E%84%E5%88%86%E7%BB%84%2F</url>
     <content type="text"><![CDATA[题目Given an array of strings, group anagrams together. For example, given: [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”], ouput：[ [“ate”, “eat”,”tea”], [“nat”,”tan”], [“bat”]] 思路运用hashmap来解决 代码12345678910111213141516171819202122232425class Solution &#123;public: vector&lt;vector&lt;string&gt;&gt; groupAnagrams(vector&lt;string&gt;&amp; strs) &#123; int n=strs.size(); if(n==0) return vector&lt;vector&lt;string&gt;&gt; (); vector&lt;vector&lt;string&gt;&gt; res; unordered_map&lt;string, vector&lt;string&gt;&gt; hash; //(1)将字符串数组先按字典顺序排序 sort(strs.begin(), strs.end()); //(2)构造hash表 for(int i=0;i&lt;n;i++) &#123;//将排序后相等的字符串放在相同的vector string tmp=strs[i]; sort(tmp.begin(), tmp.end()); hash[tmp].push_back(strs[i]); &#125; unordered_map&lt;string, vector&lt;string&gt;&gt;::iterator it; for(it=hash.begin();it != hash.end();it++) &#123;//(3)将hash表中的value值(数组形式)放到结果数组 res.push_back(it-&gt;second); &#125; return res; &#125;&#125;;]]></content>
