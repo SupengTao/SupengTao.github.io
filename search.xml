@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于fetch的使用]]></title>
+    <url>%2F2019%2F06%2F11%2F%E5%85%B3%E4%BA%8Efetch%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[起源在 Ajax 中涉及到的 JavaScript 方面的技术，即 XMLHttpRequest（以下简称 XHR）。很长一段时间我们都是通过 XHR 来与服务器建立异步通信。然而在使用的过程中，我们发现 XHR 是基于事件的异步模型，在设计上将输入、输出和事件监听混杂在一个对象里，且必须通过实例化方式来发请求。配置和调用方式混乱，不符合关注分点离原则。 基于此需求提出了Fetch API fetch的使用 该fetch()方法返回一个Promise解析Response来自Request显示状态（成功与否）的方法。如果您promise {}在控制台日志屏幕中收到此消息，请不要惊慌 - 它基本上意味着Promise工作，但等待解决。因此，为了解决它，我们需要 .then()处理程序（回调）来访问内容。 所以简而言之，我们首先定义路径（Fetch），其次是从服务器请求数据（Request），第三个定义内容类型（Body），最后但并非最不重要的是，我们访问数据（Response）。 以下为使用fetch的一个例子123456789101112131415161718fetch('./api/some.json') .then( function(response) &#123; if (response.status !== 200) &#123; console.log('Looks like there was a problem. Status Code: ' + response.status); return; &#125; // Examine the text in the response response.json().then(function(data) &#123; console.log(data); &#125;); &#125; ) .catch(function(err) &#123; console.log('Fetch Error :-S', err); &#125;); fetch相比于ajax的优势fetch基于promise实现，所以fetch在应用了async写法后，可以将异步操作写的和同步操作一样清晰易懂。]]></content>
+      <categories>
+        <category>JavaScript基础</category>
+      </categories>
+      <tags>
+        <tag>fetch</tag>
+        <tag>JavaScript基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二叉树的非递归遍历]]></title>
     <url>%2F2019%2F06%2F04%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%9D%9E%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%2F</url>
     <content type="text"><![CDATA[思路非递归遍历需要用到辅助的栈来存储需要遍历的节点。 前序遍历123456789101112131415161718function first(root) &#123; var arr=[],res=[]; if(root!=null)&#123; arr.push(root); &#125; while(arr.length!=0)&#123; var temp=arr.pop(); res.push(temp.val); //这里先放右边再放左边是因为取出来的顺序相反 if(temp.right!=null)&#123; arr.push(temp.right); &#125; if(temp.left!=null)&#123; arr.push(temp.left); &#125; &#125; return res;&#125; 中序遍历12345678910111213141516171819function LDR(root)&#123;var arr=[],res=[];while(true)&#123; while(root!=null)&#123; arr.push(root); root=root.left; &#125; //终止条件：最后树遍历完了自然就结束 if(arr.length==0)&#123; break; &#125; var temp=arr.pop(); res.push(temp.val); root=temp.right;&#125;return res;&#125;LDR(root)//4,2,5,1,6,3,7 后续遍历1234567891011121314151617function LRD(root)&#123;var arr=[],res=[];arr.push(root);while(arr.length!=0)&#123; var p=arr.pop(); res.push(p.val); if(p.left!=null)&#123; arr.push(p.left); &#125; if(p.right!=null)&#123; arr.push(p.right); &#125;&#125;return res.reverse();&#125;LRD(root)//4,5,2,6,7,3,1]]></content>
