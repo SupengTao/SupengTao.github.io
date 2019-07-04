@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[测试]]></title>
+    <url>%2F2019%2F07%2F04%2F%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[关于fetch的使用]]></title>
     <url>%2F2019%2F06%2F11%2F%E5%85%B3%E4%BA%8Efetch%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[起源在 Ajax 中涉及到的 JavaScript 方面的技术，即 XMLHttpRequest（以下简称 XHR）。很长一段时间我们都是通过 XHR 来与服务器建立异步通信。然而在使用的过程中，我们发现 XHR 是基于事件的异步模型，在设计上将输入、输出和事件监听混杂在一个对象里，且必须通过实例化方式来发请求。配置和调用方式混乱，不符合关注分点离原则。 基于此需求提出了Fetch API fetch的使用 该fetch()方法返回一个Promise解析Response来自Request显示状态（成功与否）的方法。如果您promise {}在控制台日志屏幕中收到此消息，请不要惊慌 - 它基本上意味着Promise工作，但等待解决。因此，为了解决它，我们需要 .then()处理程序（回调）来访问内容。 所以简而言之，我们首先定义路径（Fetch），其次是从服务器请求数据（Request），第三个定义内容类型（Body），最后但并非最不重要的是，我们访问数据（Response）。 以下为使用fetch的一个例子123456789101112131415161718fetch('./api/some.json') .then( function(response) &#123; if (response.status !== 200) &#123; console.log('Looks like there was a problem. Status Code: ' + response.status); return; &#125; // Examine the text in the response response.json().then(function(data) &#123; console.log(data); &#125;); &#125; ) .catch(function(err) &#123; console.log('Fetch Error :-S', err); &#125;); fetch相比于ajax的优势fetch基于promise实现，所以fetch在应用了async写法后，可以将异步操作写的和同步操作一样清晰易懂。]]></content>
@@ -8,8 +13,8 @@
         <category>JavaScript基础</category>
       </categories>
       <tags>
-        <tag>JavaScript基础</tag>
         <tag>fetch</tag>
+        <tag>JavaScript基础</tag>
       </tags>
   </entry>
   <entry>
