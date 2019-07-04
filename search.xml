@@ -211,7 +211,7 @@
   <entry>
     <title><![CDATA[函数柯里化]]></title>
     <url>%2F2019%2F05%2F13%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[函数柯里化的例子`js function sum(){ var args1 = Array.prototype.slice.call(arguments); function fn(){ var args2 = Array.prototype.slice.call(arguments); return sum.apply(null,args.concat(args1)); } fn.valueOf = function(){ return args1.reduce(function(){ return a+b; }) } return fn; } console.log(sum(1,2,3).valueOf());//6 console.log(sum(2,3)(2).valueOf());//7]]></content>
       <categories>
         <category>JavaScript基础</category>
       </categories>

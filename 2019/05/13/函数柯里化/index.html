@@ -79,15 +79,18 @@
 
 
 
+<meta name="description" content="函数柯里化的例子`js  function sum(){      var args1 = Array.prototype.slice.call(arguments);      function fn(){          var args2 = Array.prototype.slice.call(arguments);          return sum.apply(null,args">
 <meta name="keywords" content="JavaScript基础,函数柯里化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数柯里化">
 <meta property="og:url" content="http://yoursite.com/2019/05/13/函数柯里化/index.html">
 <meta property="og:site_name" content="北极洲">
+<meta property="og:description" content="函数柯里化的例子`js  function sum(){      var args1 = Array.prototype.slice.call(arguments);      function fn(){          var args2 = Array.prototype.slice.call(arguments);          return sum.apply(null,args">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-03T15:22:14.297Z">
+<meta property="og:updated_time" content="2019-07-04T15:15:43.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数柯里化">
+<meta name="twitter:description" content="函数柯里化的例子`js  function sum(){      var args1 = Array.prototype.slice.call(arguments);      function fn(){          var args2 = Array.prototype.slice.call(arguments);          return sum.apply(null,args">
 
 
 
@@ -371,7 +374,9 @@
       
 
       
-        
+        <h2 id="函数柯里化的例子"><a href="#函数柯里化的例子" class="headerlink" title="函数柯里化的例子"></a>函数柯里化的例子</h2><p><code>`</code>js<br>  function sum(){<br>      var args1 = Array.prototype.slice.call(arguments);<br>      function fn(){<br>          var args2 = Array.prototype.slice.call(arguments);<br>          return sum.apply(null,args.concat(args1));<br>      }<br>    fn.valueOf = function(){<br>        return args1.reduce(function(){<br>            return a+b;<br>        })<br>    }<br>    return fn;<br>  }</p>
+<p>  console.log(sum(1,2,3).valueOf());//6<br>  console.log(sum(2,3)(2).valueOf());//7</p>
+
       
     </div>
     
@@ -467,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -546,6 +560,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数柯里化的例子"><span class="nav-number">1.</span> <span class="nav-text">函数柯里化的例子</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
