@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[测试]]></title>
-    <url>%2F2019%2F07%2F04%2F%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[在新电脑上更新hexo博客的方法]]></title>
+    <url>%2F2019%2F07%2F04%2F%E5%9C%A8%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[起因终于结束了漫长的考试周，有时间可以再次更新博客了。由于来到了公司暑假实习，领了新电脑，发现直接从github上clone博客没法更新，从网上查找后，终于解决了问题。]]></content>
+      <categories>
+        <category>杂文</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[关于fetch的使用]]></title>
