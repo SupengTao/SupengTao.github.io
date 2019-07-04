@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="函数柯里化的例子`js  function sum(){      var args1 = Array.prototype.slice.call(arguments);      function fn(){          var args2 = Array.prototype.slice.call(arguments);          return sum.apply(null,args">
+<meta name="description" content="函数柯里化的例子12345678910111213141516function sum()&amp;#123;    var args1 = Array.prototype.slice.call(arguments);    function fn()&amp;#123;        var args2 = Array.prototype.slice.call(arguments);        return">
 <meta name="keywords" content="JavaScript基础,函数柯里化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数柯里化">
 <meta property="og:url" content="http://yoursite.com/2019/05/13/函数柯里化/index.html">
 <meta property="og:site_name" content="北极洲">
-<meta property="og:description" content="函数柯里化的例子`js  function sum(){      var args1 = Array.prototype.slice.call(arguments);      function fn(){          var args2 = Array.prototype.slice.call(arguments);          return sum.apply(null,args">
+<meta property="og:description" content="函数柯里化的例子12345678910111213141516function sum()&amp;#123;    var args1 = Array.prototype.slice.call(arguments);    function fn()&amp;#123;        var args2 = Array.prototype.slice.call(arguments);        return">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-04T15:15:43.152Z">
+<meta property="og:updated_time" content="2019-07-04T15:17:50.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数柯里化">
-<meta name="twitter:description" content="函数柯里化的例子`js  function sum(){      var args1 = Array.prototype.slice.call(arguments);      function fn(){          var args2 = Array.prototype.slice.call(arguments);          return sum.apply(null,args">
+<meta name="twitter:description" content="函数柯里化的例子12345678910111213141516function sum()&amp;#123;    var args1 = Array.prototype.slice.call(arguments);    function fn()&amp;#123;        var args2 = Array.prototype.slice.call(arguments);        return">
 
 
 
@@ -374,8 +374,7 @@
       
 
       
-        <h2 id="函数柯里化的例子"><a href="#函数柯里化的例子" class="headerlink" title="函数柯里化的例子"></a>函数柯里化的例子</h2><p><code>`</code>js<br>  function sum(){<br>      var args1 = Array.prototype.slice.call(arguments);<br>      function fn(){<br>          var args2 = Array.prototype.slice.call(arguments);<br>          return sum.apply(null,args.concat(args1));<br>      }<br>    fn.valueOf = function(){<br>        return args1.reduce(function(){<br>            return a+b;<br>        })<br>    }<br>    return fn;<br>  }</p>
-<p>  console.log(sum(1,2,3).valueOf());//6<br>  console.log(sum(2,3)(2).valueOf());//7</p>
+        <h2 id="函数柯里化的例子"><a href="#函数柯里化的例子" class="headerlink" title="函数柯里化的例子"></a>函数柯里化的例子</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> args1 = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> args2 = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">        <span class="keyword">return</span> sum.apply(<span class="literal">null</span>,args.concat(args1));</span><br><span class="line">    &#125;</span><br><span class="line">  fn.valueOf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> args1.reduce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="keyword">return</span> a+b;</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).valueOf());<span class="comment">//6</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">2</span>,<span class="number">3</span>)(<span class="number">2</span>).valueOf());<span class="comment">//7</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
