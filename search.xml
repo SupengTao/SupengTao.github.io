@@ -217,7 +217,7 @@
   <entry>
     <title><![CDATA[函数柯里化]]></title>
     <url>%2F2019%2F05%2F13%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[函数柯里化的例子12345678910111213141516function sum()&#123; var args1 = Array.prototype.slice.call(arguments); function fn()&#123; var args2 = Array.prototype.slice.call(arguments); return sum.apply(null,args.concat(args1)); &#125; fn.valueOf = function()&#123; return args1.reduce(function()&#123; return a+b; &#125;) &#125; return fn;&#125;console.log(sum(1,2,3).valueOf());//6console.log(sum(2,3)(2).valueOf());//7]]></content>
+    <content type="text"><![CDATA[函数柯里化的含义柯里化（Currying）是把接受多个参数的函数变换成接受一个单一参数(最初函数的第一个参数)的函数，并且返回接受余下的参数且返回结果的新函数的技术 书上的例子12345678910111213var currying = function (fn) &#123; var args = Array.prototype.slice.call(arguments , 1); // 获取固定参数时的除fn 以外的所有参数（我们可以认为是默认参数，参数的类型可以是函数，对象，数字，字符 Json等等） return function () &#123; // 返回的函数再进行调用的时候，获取全部参数（变化参数） // 将default默认的参数和变化参数合并 var fArgs = args.concat( Array.prototype.slice.call( arguments ) ); // 执行被柯里化的函数，并将合并好的参数丢给该函数 fn.apply( null , fArgs ); &#125;&#125;` 实现一个例子12345678910111213141516function sum()&#123; var args1 = Array.prototype.slice.call(arguments); function fn()&#123; var args2 = Array.prototype.slice.call(arguments); return sum.apply(null,args.concat(args1)); &#125; fn.valueOf = function()&#123; return args1.reduce(function()&#123; return a+b; &#125;) &#125; return fn;&#125;console.log(sum(1,2,3).valueOf());//6console.log(sum(2,3)(2).valueOf());//7]]></content>
       <categories>
         <category>JavaScript基础</category>
       </categories>
