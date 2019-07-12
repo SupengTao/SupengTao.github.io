@@ -378,6 +378,7 @@
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用map来记录字符出现的次数即可</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">FirstNotRepeatingChar</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (str.length &lt; <span class="number">1</span> || str.length &gt; <span class="number">10000</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">const</span> map = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!map[str[i]]) &#123;</span><br><span class="line">      map[str[i]] = <span class="number">1</span>;<span class="comment">//未出现过则map次数为1</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      map[str[i]]++;<span class="comment">//出现过则次数在加一</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (map[str[i]] === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> i;<span class="comment">//找到出现次数第一个为一的字符</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
       
     </div>
     
@@ -511,7 +512,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

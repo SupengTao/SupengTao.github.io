@@ -378,6 +378,7 @@
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>快慢指针</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EntryNodeOfLoop</span>(<span class="params">pHead</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> fast = pHead;</span><br><span class="line">  <span class="keyword">let</span> slow = pHead;</span><br><span class="line">  <span class="keyword">while</span> (fast !== <span class="literal">null</span> &amp;&amp; fast.next !== <span class="literal">null</span>) &#123;</span><br><span class="line">    slow = slow.next;</span><br><span class="line">    fast = fast.next.next;</span><br><span class="line">    <span class="keyword">if</span> (fast === slow) &#123;</span><br><span class="line">      <span class="comment">// 两者相遇</span></span><br><span class="line">      <span class="keyword">let</span> p = pHead;</span><br><span class="line">      <span class="keyword">while</span> (p !== slow) &#123;</span><br><span class="line">        p = p.next;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
       
     </div>
     
@@ -511,7 +512,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
