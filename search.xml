@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[迁移hexo博客遇到的一些问题]]></title>
     <url>%2F2019%2F07%2F12%2F%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[起因终于结束了漫长的考试周，准备开始继续更新博客了。结果实习后换了分配的电脑，发现在迁移博客的过程中遇到了一些问题，就记录下来，以便后续再迁移的时候避坑。 博客源码问题本来打算直接从github上clone一份下来直接更新，结果发现github上存的代码只包含了网页源码，后台操作的代码没有上传。通过搜索后，解决方法如下： 在现有的XXX.github.io项目上创建一个分支来管理 克隆gitHub上的XXX.github.io项目的文件到本地 1git clone https://github.com/yourname/xxx.github.io.git 删除文件夹里除了.git的其他所有文件 把hexo项目文件下的所有文件全部复制过来 里面应该有一个叫.gitignore的文件，如果没有就输入 touch .gitignore，创建一个 .gitignore文件里应该是这些内容 1234567.DS_Store Thumbs.db db.json *.log node_modules/ public/ .deploy*/ 创建一个叫hexo的分支并切换到这个分支上 1git checkout -b hexo 提交复制过来的文件到暂存区 1git add --all 提交 1git commit -m &quot;新建分支资源文件&quot; 推送分支到github 1git push --set-upstream origin hexo 到这一步我们就基本上搞定了，以后再跟新了博客就直接 git push就可以了，hexo的操作跟以前一样不变。 今后无论什么时候想要在其他电脑上面用hexo写博客，就直接把创建的分支克隆下来，npm install安装依赖之后就可以用了。 克隆分支的操作1git clone -b hexo https://github.com/yourname/xxx.github.io.git 因为上面创建的是一个名字叫hexo的分支，所以这里-b后面的是hexo，再把后面的gitHub的地址换成你自己的hexo博客的地址就可以了。 这样做完了以后，每次写完博客发布之后不要忘了还要git push把源文件推到分支上。 github上不显示contribution记录的问题在几次更细博客后，发现在github的contribution图上没有显示对应的活动记录后来发现是因为在本机的git账号使用的公司分配的git账号，切换成github个人账号后即可解决问题]]></content>
   </entry>
   <entry>
     <title><![CDATA[关于fetch的使用]]></title>
