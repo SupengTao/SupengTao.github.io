@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JS的设计模式]]></title>
+    <url>%2F2019%2F07%2F15%2FJS%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[定义1设计模式的定义：在面向对象软件设计过程中针对特定问题的简洁而优雅的解决方案 简单来说，设计模式是解决某个特定场景下对某种问题的解决方案。 以下是几种常见的JS设计模式 单例模式单例模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一变量进行访问。 **单体模式的优点是： 1.可以用来划分命名空间，减少全局变量的数量。2.使用单体模式可以使代码组织的更为一致，使代码容易阅读和维护。3.可以被实例化，且实例化一次。** 适用场景：]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[迁移hexo中遇到的一些问题]]></title>
     <url>%2F2019%2F07%2F12%2F%E8%BF%81%E7%A7%BBhexo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[起因终于结束了漫长的考试周，准备开始继续更新博客了。结果实习后换了分配的电脑，发现在迁移博客的过程中遇到了一些问题，就记录下来，以便后续再迁移的时候避坑。 博客源码问题本来打算直接从github上clone一份下来直接更新，结果发现github上存的代码只包含了网页源码，后台操作的代码没有上传。通过搜索后，解决方法如下： 在现有的XXX.github.io项目上创建一个分支来管理 克隆gitHub上的XXX.github.io项目的文件到本地 1git clone https://github.com/yourname/xxx.github.io.git 删除文件夹里除了.git的其他所有文件 把hexo项目文件下的所有文件全部复制过来 里面应该有一个叫.gitignore的文件，如果没有就输入 touch .gitignore，创建一个 .gitignore文件里应该是这些内容 1234567.DS_Store Thumbs.db db.json *.log node_modules/ public/ .deploy*/ 创建一个叫hexo的分支并切换到这个分支上 1git checkout -b hexo 提交复制过来的文件到暂存区 1git add --all 提交 1git commit -m &quot;新建分支资源文件&quot; 推送分支到github 1git push --set-upstream origin hexo 到这一步我们就基本上搞定了，以后再跟新了博客就直接 git push就可以了，hexo的操作跟以前一样不变。 今后无论什么时候想要在其他电脑上面用hexo写博客，就直接把创建的分支克隆下来，npm install安装依赖之后就可以用了。 克隆分支的操作 1git clone -b hexo https://github.com/yourname/xxx.github.io.git 因为上面创建的是一个名字叫hexo的分支，所以这里-b后面的是hexo，再把后面的gitHub的地址换成你自己的hexo博客的地址就可以了。 这样做完了以后，每次写完博客发布之后不要忘了还要git push把源文件推到分支上。 github上不显示contribution记录的问题在几次更细博客后，发现在github的contribution图上没有显示对应的活动记录后来发现是因为在本机的git账号使用的公司分配的git账号，切换成github个人账号后即可解决问题]]></content>
@@ -16,8 +28,8 @@
         <category>JavaScript基础</category>
       </categories>
       <tags>
-        <tag>fetch</tag>
         <tag>JavaScript基础</tag>
+        <tag>fetch</tag>
       </tags>
   </entry>
   <entry>
