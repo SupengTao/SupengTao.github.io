@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="北极洲">
 <meta property="og:description" content="定义1设计模式的定义：在面向对象软件设计过程中针对特定问题的简洁而优雅的解决方案  简单来说，设计模式是解决某个特定场景下对某种问题的解决方案。 以下是几种常见的JS设计模式 单例模式单例模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一变量进行访问。 单体模式的优点是：1.可以用来划分命名空间，减少全局变量的数量。2.使用单体模式可以使代码组织的更为一致，使代码容易阅">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-15T06:43:36.211Z">
+<meta property="og:updated_time" content="2019-07-15T06:50:12.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS的设计模式">
 <meta name="twitter:description" content="定义1设计模式的定义：在面向对象软件设计过程中针对特定问题的简洁而优雅的解决方案  简单来说，设计模式是解决某个特定场景下对某种问题的解决方案。 以下是几种常见的JS设计模式 单例模式单例模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一变量进行访问。 单体模式的优点是：1.可以用来划分命名空间，减少全局变量的数量。2.使用单体模式可以使代码组织的更为一致，使代码容易阅">
@@ -383,6 +383,8 @@
 <h3 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h3><p>例如弹窗，无论点击多少次，弹窗只应该被创建一次。</p>
 <h3 id="单例的例子"><a href="#单例的例子" class="headerlink" title="单例的例子"></a>单例的例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CreateUser</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.getName();</span><br><span class="line">    &#125;</span><br><span class="line">    getName() &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 代理实现单例模式</span></span><br><span class="line"><span class="keyword">var</span> ProxyMode = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> instance = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!instance) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> CreateUser(name);</span><br><span class="line">        &#125;<span class="comment">//如果已经实例化则返回实例，反之则实例化一个实例</span></span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 测试单体模式的实例</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> ProxyMode(<span class="string">"aaa"</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> ProxyMode(<span class="string">"bbb"</span>);</span><br><span class="line"><span class="comment">// 因为单体模式是只实例化一次，所以下面的实例是相等的</span></span><br><span class="line"><span class="built_in">console</span>.log(a === b);    <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">装饰者模式的定义：在不改变对象自身的基础上，在程序运行期间给对象动态地添加方法。</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -502,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -513,7 +515,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -573,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">2.</span> <span class="nav-text">单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单体模式的优点是："><span class="nav-number">2.1.</span> <span class="nav-text">单体模式的优点是：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景："><span class="nav-number">2.2.</span> <span class="nav-text">适用场景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单例的例子"><span class="nav-number">2.3.</span> <span class="nav-text">单例的例子</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">2.</span> <span class="nav-text">单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单体模式的优点是："><span class="nav-number">2.1.</span> <span class="nav-text">单体模式的优点是：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景："><span class="nav-number">2.2.</span> <span class="nav-text">适用场景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单例的例子"><span class="nav-number">2.3.</span> <span class="nav-text">单例的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰者模式"><span class="nav-number">3.</span> <span class="nav-text">装饰者模式</span></a></li></ol></div>
             
 
           </div>
