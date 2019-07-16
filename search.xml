@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[实现一个promise方法]]></title>
+    <url>%2F2019%2F07%2F16%2F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AApromise%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[JS的设计模式]]></title>
     <url>%2F2019%2F07%2F15%2FJS%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[定义1设计模式的定义：在面向对象软件设计过程中针对特定问题的简洁而优雅的解决方案 简单来说，设计模式是解决某个特定场景下对某种问题的解决方案。 以下是几种常见的JS设计模式 单例模式单例模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一变量进行访问。 单体模式的优点是：1.可以用来划分命名空间，减少全局变量的数量。2.使用单体模式可以使代码组织的更为一致，使代码容易阅读和维护。3.可以被实例化，且实例化一次。 适用场景：例如弹窗，无论点击多少次，弹窗只应该被创建一次。 单例的例子123456789101112131415161718192021222324class CreateUser &#123; constructor(name) &#123; this.name = name; this.getName(); &#125; getName() &#123; return this.name; &#125;&#125;// 代理实现单例模式var ProxyMode = (function() &#123; var instance = null; return function(name) &#123; if(!instance) &#123; instance = new CreateUser(name); &#125;//如果已经实例化则返回实例，反之则实例化一个实例 return instance; &#125;&#125;)();// 测试单体模式的实例var a = new ProxyMode("aaa");var b = new ProxyMode("bbb");// 因为单体模式是只实例化一次，所以下面的实例是相等的console.log(a === b); //true 装饰者模式1装饰者模式的定义：在不改变对象自身的基础上，在程序运行期间给对象动态地添加方法。]]></content>
