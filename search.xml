@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo是如何运作的]]></title>
+    <url>%2F2019%2F08%2F07%2Fhexo%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C%E7%9A%84%2F</url>
+    <content type="text"><![CDATA[说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构]]></content>
+      <categories>
+        <category>杂文</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二叉树查找最近公共父节点]]></title>
     <url>%2F2019%2F07%2F29%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E6%9F%A5%E6%89%BE%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%88%B6%E8%8A%82%E7%82%B9%2F</url>
     <content type="text"><![CDATA[题目查询二叉树中两个节点的最近公共父节点 思路递归查找，具体看注释 代码123456789101112131415161718// function Node(x)&#123;// this.val=x;// this.left=null;// this.right=null;// &#125;//定义节点结构function parent(root,a,b)&#123; if(root==null) return null;//如果根节点为空则返回空 if(root==a||root==b) return root;//如果a，b之中有一个是根节点，则返回根节点 var left=parent(root.left,a,b); var right=parent(root.right,a,b);//递归左右子树的结果 if(left&amp;&amp;right)&#123; return root;//如果a,b分别在左右子树上，则最近的公共节点是root &#125; return left?left:right;//不为空的那个是公共父节点&#125;]]></content>
@@ -55,8 +66,8 @@
         <category>JavaScript基础</category>
       </categories>
       <tags>
-        <tag>JavaScript基础</tag>
         <tag>fetch</tag>
+        <tag>JavaScript基础</tag>
       </tags>
   </entry>
   <entry>
