@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="北极洲">
 <meta property="og:description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构新建一个hexo项目，就可以看到hexo的核心文件结构了，如下 12345678├── _config.yml ├── db.json├── node_modules ├── package.json├── public ├─">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-08T12:20:54.656Z">
+<meta property="og:updated_time" content="2019-08-08T12:29:00.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo是如何运作的">
 <meta name="twitter:description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构新建一个hexo项目，就可以看到hexo的核心文件结构了，如下 12345678├── _config.yml ├── db.json├── node_modules ├── package.json├── public ├─">
@@ -384,7 +384,14 @@
 <p>模板文件在 layout 文件夹下，layout 文件文档结构如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">├── _custom                           // 通用布局</span><br><span class="line">├── _layout.swig                      // 默认布局布局</span><br><span class="line">├── _macro                            // 插件模板</span><br><span class="line">├── _partials                         // 局部布局</span><br><span class="line">├── _scripts                          // script模板</span><br><span class="line">├── _third-party                      // 第三方插件模板</span><br><span class="line">├── archive.swig                      // 归档模板</span><br><span class="line">├── category.swig                     // 分类模板</span><br><span class="line">├── index.swig                        // 首页模板</span><br><span class="line">├── page.swig                         // 其他模板</span><br><span class="line">├── photo.swig                        // 照片模板（自定义）</span><br><span class="line">├── post.swig                         // 文章模板</span><br><span class="line">├── schedule.swig                     // 归档模板</span><br><span class="line">└── tag.swig                          // 标签模板</span><br></pre></td></tr></table></figure>
 
-<p>在我们新建页面或者新建文章的使用可以选定我们使用的模板。hexo new layout <title>就会使用对应的模板。<br>其中 _layout.swig 是通用模板，里面引入了 head、footer 等公共组件，然后在其他的模板中会引入这个 _layout.swig 通用模板</title></p>
+<p>在我们新建页面或者新建文章的使用可以选定我们使用的模板，它就会使用对应的模板。<br>其中 _layout.swig 是通用模板，里面引入了 head、footer 等公共组件，然后在其他的模板中会引入这个 _layout.swig 通用模板</p>
+<p><strong>整体渲染流程如下：</strong></p>
+<p>第一次渲染：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：<span class="built_in">source</span>中的md源文件</span><br><span class="line">模板引擎：yml配置和markdown语法</span><br><span class="line">输出：article对象，包含其基本属性title、date、tags、categories、content等等</span><br></pre></td></tr></table></figure>
+
+<p>第二次渲染：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：1.上次渲染的article对象   2.themes主题样式文件</span><br><span class="line">模板引擎：ejs等（取决于themes/layout文件下的文件格式</span><br><span class="line">输出：publice下文件成型的网站页面</span><br></pre></td></tr></table></figure>
+
 <h2 id="当我们用hexo-命令行时，我们在用什么"><a href="#当我们用hexo-命令行时，我们在用什么" class="headerlink" title="当我们用hexo 命令行时，我们在用什么"></a>当我们用hexo 命令行时，我们在用什么</h2><p>hexo其实可以粗略的分为三个项目分别是hexo-cli、上文提到的hexo-core、以及广义上的hexo-plugins用于给hexo提供扩展功能<br>其中命令行功能，就用到了hexo-cli</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.启动hexo命令(进程)，及其参数解析机制。每次我们输入’hexo xxx’命令后，都会通过node调用hexo-cli中的entry函数(比如，可以把’hexo init’视为’node hexo-cli/entry.js init’)</span><br><span class="line">2.实现hexo命令的三个初始参数(功能): init / version / <span class="built_in">help</span></span><br><span class="line">3.加载hexo核心模块，并初始化</span><br></pre></td></tr></table></figure>
 
