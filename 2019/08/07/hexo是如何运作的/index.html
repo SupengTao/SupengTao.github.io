@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构">
+<meta name="description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构新建一个hexo项目，就可以看到hexo的核心文件结构了，如下 12345678├── _config.yml ├── db.json├── node_modules ├── package.json├── public ├─">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo是如何运作的">
 <meta property="og:url" content="http://yoursite.com/2019/08/07/hexo是如何运作的/index.html">
 <meta property="og:site_name" content="北极洲">
-<meta property="og:description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构">
+<meta property="og:description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构新建一个hexo项目，就可以看到hexo的核心文件结构了，如下 12345678├── _config.yml ├── db.json├── node_modules ├── package.json├── public ├─">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-07T14:57:17.531Z">
+<meta property="og:updated_time" content="2019-08-08T12:20:54.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo是如何运作的">
-<meta name="twitter:description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构">
+<meta name="twitter:description" content="说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。 hexo的文件结构新建一个hexo项目，就可以看到hexo的核心文件结构了，如下 12345678├── _config.yml ├── db.json├── node_modules ├── package.json├── public ├─">
 
 
 
@@ -375,7 +375,29 @@
 
       
         <p>说来惭愧，用hexo几个月了，却对hexo本身没什么了解，今天看了下vue-cli的原理，感觉和hexo有相似之处，才打算深入了解一下hexo的构建原理。</p>
-<h2 id="hexo的文件结构"><a href="#hexo的文件结构" class="headerlink" title="hexo的文件结构"></a>hexo的文件结构</h2>
+<h2 id="hexo的文件结构"><a href="#hexo的文件结构" class="headerlink" title="hexo的文件结构"></a>hexo的文件结构</h2><p>新建一个hexo项目，就可以看到hexo的核心文件结构了，如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml </span><br><span class="line">├── db.json</span><br><span class="line">├── node_modules </span><br><span class="line">├── package.json</span><br><span class="line">├── public </span><br><span class="line">├── scaffolds </span><br><span class="line">├── <span class="built_in">source</span> <span class="comment">#所有文章文件放在这里</span></span><br><span class="line">└── themes <span class="comment">#主题文件夹</span></span><br></pre></td></tr></table></figure>
+
+<p>_config.yml  站点的配置文件。<br>db.json   缓存文件<br>node_modules   安装的插件以及hexo所需的一些node.js模块。<br>package.json  应用程序信息，配置hexo运行需要的js包。<br>public  最终所见网页的所有内容<br>scaffolds   模板文件夹。当新建一个文章时，会默认包含对应模板的内容。<br>source  资源文件夹是存放用户资源的地方。所有的源文件都会被保存在_post文件夹中。除 posts 文件夹之外，开头命名为 (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。<br>themes  存放主题文件，hexo会根据主题来生成静态页面。</p>
+<p>值得注意的是source文件和themes文件是同级的，其中sources有点类似于mv*项目中的model，而themes则为view，两者完全分离开来，为hexo主题多样性提供了可能性。</p>
+<h2 id="hexo的模板引擎"><a href="#hexo的模板引擎" class="headerlink" title="hexo的模板引擎"></a>hexo的模板引擎</h2><p>Hexo 的模板引擎是默认使用 ejs 编写的。hexo首先会解析 md 文件，然后根据 layout 判断布局类型，再调用其他的文件，这样每一块的内容都是独立的，提高代码的复用性。最终会生成一个 html 页面。</p>
+<p>模板文件在 layout 文件夹下，layout 文件文档结构如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">├── _custom                           // 通用布局</span><br><span class="line">├── _layout.swig                      // 默认布局布局</span><br><span class="line">├── _macro                            // 插件模板</span><br><span class="line">├── _partials                         // 局部布局</span><br><span class="line">├── _scripts                          // script模板</span><br><span class="line">├── _third-party                      // 第三方插件模板</span><br><span class="line">├── archive.swig                      // 归档模板</span><br><span class="line">├── category.swig                     // 分类模板</span><br><span class="line">├── index.swig                        // 首页模板</span><br><span class="line">├── page.swig                         // 其他模板</span><br><span class="line">├── photo.swig                        // 照片模板（自定义）</span><br><span class="line">├── post.swig                         // 文章模板</span><br><span class="line">├── schedule.swig                     // 归档模板</span><br><span class="line">└── tag.swig                          // 标签模板</span><br></pre></td></tr></table></figure>
+
+<p>在我们新建页面或者新建文章的使用可以选定我们使用的模板。hexo new layout <title>就会使用对应的模板。<br>其中 _layout.swig 是通用模板，里面引入了 head、footer 等公共组件，然后在其他的模板中会引入这个 _layout.swig 通用模板</title></p>
+<h2 id="当我们用hexo-命令行时，我们在用什么"><a href="#当我们用hexo-命令行时，我们在用什么" class="headerlink" title="当我们用hexo 命令行时，我们在用什么"></a>当我们用hexo 命令行时，我们在用什么</h2><p>hexo其实可以粗略的分为三个项目分别是hexo-cli、上文提到的hexo-core、以及广义上的hexo-plugins用于给hexo提供扩展功能<br>其中命令行功能，就用到了hexo-cli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.启动hexo命令(进程)，及其参数解析机制。每次我们输入’hexo xxx’命令后，都会通过node调用hexo-cli中的entry函数(比如，可以把’hexo init’视为’node hexo-cli/entry.js init’)</span><br><span class="line">2.实现hexo命令的三个初始参数(功能): init / version / <span class="built_in">help</span></span><br><span class="line">3.加载hexo核心模块，并初始化</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>hexo简洁、强大的功能来自于自身优雅的系统设计:<br>hexo进程启动、hexo核心对象封装、插件系统分别独立<br>自身采用插件驱动，生来就具备高可扩展性</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><p><a href="http://coderunthings.com/2017/08/20/howhexoworks/" target="_blank" rel="noopener">http://coderunthings.com/2017/08/20/howhexoworks/</a></p>
+</li>
+<li><p><a href="https://segmentfault.com/a/1190000008784436#articleHeader3" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008784436#articleHeader3</a></p>
+</li>
+<li><p><a href="https://juejin.im/post/598eeaff5188257d592e55bb#heading-7" target="_blank" rel="noopener">https://juejin.im/post/598eeaff5188257d592e55bb#heading-7</a></p>
+</li>
+</ol>
+
       
     </div>
     
@@ -563,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo的文件结构"><span class="nav-number">1.</span> <span class="nav-text">hexo的文件结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo的文件结构"><span class="nav-number">1.</span> <span class="nav-text">hexo的文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo的模板引擎"><span class="nav-number">2.</span> <span class="nav-text">hexo的模板引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当我们用hexo-命令行时，我们在用什么"><span class="nav-number">3.</span> <span class="nav-text">当我们用hexo 命令行时，我们在用什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
